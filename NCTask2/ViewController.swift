@@ -38,12 +38,12 @@ class ViewController: UIViewController {
     
     
     private func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeybardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
 
-    @objc private func handleKeybardWillShow(_ notification: Notification) {
+    @objc private func handleKeyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
               let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber else {
