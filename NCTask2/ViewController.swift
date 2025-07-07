@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupTextField()
+        setupObservers()
         
     }
     
